@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="KeyAccessDemo" version="0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>KeyAcess</name>
+    
+    <platform name="ios">
+    <config-file parent="/*" target="config.xml">
+        <feature name="KeyAcess">
+        <param name="ios-package" value="KeyAcess" /></feature>
+</config-file>
+    <js-module name="KeyAcess" src="www/KeyAcess.js">
+    <clobbers target="cordova.plugins.KeyAcess" />
+    </js-module>
+    <header-file src="src/ios/KeyAcess.h" />
+    <source-file src="src/ios/KeyAcess.m" />
+    <header-file src="src/ios/BDCryptor.h" />
+    <source-file src="src/ios/BDCryptor.m" />
+    <header-file src="src/ios/BDCryptorError.h" />
+    <source-file src="src/ios/BDCryptorError.m" />
+    <header-file src="src/ios/BDError.h" />
+    <source-file src="src/ios/BDError.m" />
+    <header-file src="src/ios/BDLog.h" />
+    <header-file src="src/ios/BDRSACryptor.h" />
+    <source-file src="src/ios/BDRSACryptor.m" />
+    <header-file src="src/ios/BDRSACryptorKeyPair.h" />
+    <source-file src="src/ios/BDRSACryptorKeyPair.m" />
+    <header-file src="src/ios/Keychain.h" />
+    <source-file src="src/ios/Keychain.m" />
+    <header-file src="src/ios/NSData+Base64.h" />
+    <source-file src="src/ios/NSData+Base64.m" />
+    <header-file src="src/ios/NSString+Base64.h" />
+    <source-file src="src/ios/NSString+Base64.m" />
+    <source-file src="src/ios/libCrypto.a" />
+</platform>
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="KeyAcess"><param name="android-package" value="com.pankanis.KeyAcess" />
+            </feature>
+        </config-file>
+        <js-module name="KeyAcess" src="www/KeyAcess.js">
+            <clobbers target="cordova.plugins.KeyAcess" />
+        </js-module>
+        <config-file parent="/*" target="AndroidManifest.xml">
+        </config-file>
+        <source-file src="src/android/myplugin/pankanis/KeyAcess.java" target-dir="src/com/pankanis" />
+        <source-file src="src/android/myplugin/pankanis/PNSignature.java" target-dir="src/com/pankanis" />
+    </platform>
+</plugin>
